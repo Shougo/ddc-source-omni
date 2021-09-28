@@ -23,7 +23,7 @@ https://github.com/Shougo/ddc.vim
 
 ```vim
 " Use omni source.
-call ddc#custom#patch_global('sources', ['omni])
+call ddc#custom#patch_global('sources', ['omni'])
 
 " Change source options
 call ddc#custom#patch_global('sourceOptions', {
