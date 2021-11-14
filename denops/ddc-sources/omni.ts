@@ -3,15 +3,15 @@ import {
   Candidate,
   DdcOptions,
   SourceOptions,
-} from "https://deno.land/x/ddc_vim@v0.5.0/types.ts#^";
-import { Denops, op } from "https://deno.land/x/ddc_vim@v0.5.0/deps.ts#^";
+} from "https://deno.land/x/ddc_vim@v0.17.0/types.ts#^";
+import { Denops, op } from "https://deno.land/x/ddc_vim@v0.17.0/deps.ts#^";
 
 type Params = {
   blacklist: string[];
   omnifunc: string;
 };
 
-export class Source extends BaseSource {
+export class Source extends BaseSource<Params> {
   isBytePos = true;
 
   async getCompletePosition(args: {
@@ -70,8 +70,8 @@ export class Source extends BaseSource {
     }
   }
 
-  params(): Record<string, unknown> {
-    const params: Params = {
+  params(): Params {
+    return {
       blacklist: [
         "LanguageClient#complete",
         "ccomplete#Complete",
@@ -81,6 +81,5 @@ export class Source extends BaseSource {
       ],
       omnifunc: "",
     };
-    return params as unknown as Record<string, unknown>;
   }
 }
