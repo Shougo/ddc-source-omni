@@ -1,10 +1,10 @@
 import {
   BaseSource,
-  Candidate,
   DdcOptions,
+  Item,
   SourceOptions,
-} from "https://deno.land/x/ddc_vim@v0.17.0/types.ts#^";
-import { Denops, op } from "https://deno.land/x/ddc_vim@v0.17.0/deps.ts#^";
+} from "https://deno.land/x/ddc_vim@v2.2.0/types.ts";
+import { Denops, op } from "https://deno.land/x/ddc_vim@v2.2.0/deps.ts";
 
 type Params = {
   blacklist: string[];
@@ -36,13 +36,13 @@ export class Source extends BaseSource<Params> {
       return Promise.resolve(-1);
     }
   }
-  async gatherCandidates(args: {
+  async gather(args: {
     denops: Denops;
     options: DdcOptions;
     sourceOptions: SourceOptions;
     sourceParams: Params;
     completeStr: string;
-  }): Promise<Candidate[]> {
+  }): Promise<Item[]> {
     const omnifunc = (args.sourceParams.omnifunc == "")
       ? await op.omnifunc.getLocal(args.denops)
       : args.sourceParams.omnifunc;

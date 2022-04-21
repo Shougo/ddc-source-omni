@@ -32,7 +32,6 @@ https://github.com/vim-denops/denops.vim
 EXAMPLES						*ddc-omni-examples*
 >
 >
-	" Use omni source.
 	call ddc#custom#patch_global('sources', ['omni'])
 
 	" Change source options
