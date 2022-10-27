@@ -1,4 +1,4 @@
-# ddc-omni
+# ddc-source-omni
 
 Omnifunc completion for ddc.vim
 

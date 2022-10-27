@@ -1,18 +1,18 @@
-*ddc-omni.txt*	Omnifunc completion for ddc.vim
+*ddc-source-omni.txt*	Omnifunc completion for ddc.vim
 
 Author: Shougo <Shougo.Matsu at gmail.com>
 License: MIT license
 
-CONTENTS						*ddc-omni-contents*
+CONTENTS					*ddc-source-omni-contents*
 
-Introduction		|ddc-omni-introduction|
-Install			|ddc-omni-install|
-Examples		|ddc-omni-examples|
-Params			|ddc-omni-params|
+Introduction		|ddc-source-omni-introduction|
+Install			|ddc-source-omni-install|
+Examples		|ddc-source-omni-examples|
+Params			|ddc-source-omni-params|
 
 
 ==============================================================================
-INTRODUCTION					*ddc-omni-introduction*
+INTRODUCTION					*ddc-source-omni-introduction*
 
 This source collects candidates from 'omnifunc'.
 
@@ -20,7 +20,7 @@ Note: It does not support all of 'omnifunc'.
 
 
 ==============================================================================
-INSTALL							*ddc-omni-install*
+INSTALL						*ddc-source-omni-install*
 
 Please install both "ddc.vim" and "denops.vim".
 
@@ -29,7 +29,7 @@ https://github.com/vim-denops/denops.vim
 
 
 ==============================================================================
-EXAMPLES						*ddc-omni-examples*
+EXAMPLES					*ddc-source-omni-examples*
 >
 >
 	call ddc#custom#patch_global('sources', ['omni'])
@@ -52,7 +52,7 @@ EXAMPLES						*ddc-omni-examples*
 <
 
 ==============================================================================
-PARAMS							*ddc-omni-params*
+PARAMS						*ddc-source-omni-params*
 
 				    		*ddc-around-param-blacklist*
 blacklist	(string[])
