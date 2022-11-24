@@ -12,9 +12,9 @@ type Params = {
 };
 
 export class Source extends BaseSource<Params> {
-  isBytePos = true;
+  override isBytePos = true;
 
-  async getCompletePosition(args: {
+  override async getCompletePosition(args: {
     denops: Denops;
     sourceParams: Params;
   }): Promise<number> {
@@ -36,7 +36,8 @@ export class Source extends BaseSource<Params> {
       return Promise.resolve(-1);
     }
   }
-  async gather(args: {
+
+  override async gather(args: {
     denops: Denops;
     options: DdcOptions;
     sourceOptions: SourceOptions;
@@ -70,7 +71,7 @@ export class Source extends BaseSource<Params> {
     }
   }
 
-  params(): Params {
+  override params(): Params {
     return {
       blacklist: [
         "LanguageClient#complete",
