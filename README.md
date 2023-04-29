@@ -2,7 +2,7 @@
 
 Omnifunc completion for ddc.vim
 
-This source collects candidates from 'omnifunc'.
+This source collects items from 'omnifunc'.
 
 Note: It does not support all of 'omnifunc'.
 

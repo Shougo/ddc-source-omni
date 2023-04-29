@@ -14,7 +14,7 @@ Params			|ddc-source-omni-params|
 ==============================================================================
 INTRODUCTION					*ddc-source-omni-introduction*
 
-This source collects candidates from 'omnifunc'.
+This source collects items from 'omnifunc'.
 
 Note: It does not support all of 'omnifunc'.
 
