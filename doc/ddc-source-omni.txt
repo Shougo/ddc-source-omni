@@ -31,7 +31,6 @@ https://github.com/vim-denops/denops.vim
 ==============================================================================
 EXAMPLES					*ddc-source-omni-examples*
 >
->
 	call ddc#custom#patch_global('sources', ['omni'])
 
 	call ddc#custom#patch_global('sourceOptions', #{
