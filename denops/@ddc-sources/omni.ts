@@ -3,8 +3,10 @@ import {
   DdcOptions,
   Item,
   SourceOptions,
-} from "https://deno.land/x/ddc_vim@v4.1.0/types.ts";
-import { Denops, op } from "https://deno.land/x/ddc_vim@v4.1.0/deps.ts";
+} from "jsr:@shougo/ddc-vim@6.0.0/types";
+
+import type { Denops } from "jsr:@denops/core@^7.0.0";
+import * as op from "jsr:@denops/std@7.0.1/option";
 
 type Params = {
   blacklist: string[];
