@@ -1,12 +1,12 @@
-import {
-  type DdcOptions,
-  type Item,
-  type SourceOptions,
-} from "jsr:@shougo/ddc-vim@~7.0.0/types";
-import { BaseSource } from "jsr:@shougo/ddc-vim@~7.0.0/source";
+import type {
+  DdcOptions,
+  Item,
+  SourceOptions,
+} from "@shougo/ddc-vim/types";
+import { BaseSource } from "@shougo/ddc-vim/source";
 
-import type { Denops } from "jsr:@denops/core@~7.0.0";
-import * as op from "jsr:@denops/std@~7.1.1/option";
+import type { Denops } from "@denops/std";
+import * as op from "@denops/std/option";
 
 type Params = {
   blacklist: string[];
