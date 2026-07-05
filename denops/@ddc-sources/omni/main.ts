@@ -1,8 +1,4 @@
-import type {
-  DdcOptions,
-  Item,
-  SourceOptions,
-} from "@shougo/ddc-vim/types";
+import type { DdcOptions, Item, SourceOptions } from "@shougo/ddc-vim/types";
 import { BaseSource } from "@shougo/ddc-vim/source";
 
 import type { Denops } from "@denops/std";
@@ -23,7 +19,7 @@ export class Source extends BaseSource<Params> {
     const omnifunc = (args.sourceParams.omnifunc == "")
       ? await op.omnifunc.getLocal(args.denops)
       : args.sourceParams.omnifunc;
-    if (omnifunc == "" || omnifunc in args.sourceParams.blacklist) {
+    if (omnifunc == "" || args.sourceParams.blacklist.includes(omnifunc)) {
       return Promise.resolve(-1);
     }
 
@@ -49,7 +45,7 @@ export class Source extends BaseSource<Params> {
     const omnifunc = (args.sourceParams.omnifunc == "")
       ? await op.omnifunc.getLocal(args.denops)
       : args.sourceParams.omnifunc;
-    if (omnifunc == "" || omnifunc in args.sourceParams.blacklist) {
+    if (omnifunc == "" || args.sourceParams.blacklist.includes(omnifunc)) {
       return Promise.resolve([]);
     }
 
@@ -58,7 +54,7 @@ export class Source extends BaseSource<Params> {
       if (ret instanceof Array && ret.length != 0) {
         return Promise.resolve(ret.map(
           (candidate) =>
-            (candidate instanceof String) ? { word: candidate } : candidate,
+            (typeof candidate === "string") ? { word: candidate } : candidate,
         ));
       } else {
         // Invalid
@@ -66,7 +62,7 @@ export class Source extends BaseSource<Params> {
       }
     } catch (e: unknown) {
       console.error(
-        `[ddc.vim] omni: omnifunc ${omnifunc} getCompletePosition() is failed`,
+        `[ddc.vim] omni: omnifunc ${omnifunc} gather() is failed`,
       );
       console.error(e);
       return [];
