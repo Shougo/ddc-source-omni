@@ -28,7 +28,7 @@ export class Source extends BaseSource<Params> {
       return Promise.resolve(pos);
     } catch (e: unknown) {
       console.error(
-        `[ddc.vim] omni: omnifunc ${omnifunc} getCompletePosition() is failed`,
+        `[ddc.vim] omni: omnifunc ${omnifunc} getCompletePosition() failed`,
       );
       console.error(e);
       return Promise.resolve(-1);
@@ -62,7 +62,7 @@ export class Source extends BaseSource<Params> {
       }
     } catch (e: unknown) {
       console.error(
-        `[ddc.vim] omni: omnifunc ${omnifunc} gather() is failed`,
+        `[ddc.vim] omni: omnifunc ${omnifunc} gather() failed`,
       );
       console.error(e);
       return [];
